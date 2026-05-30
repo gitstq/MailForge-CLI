@@ -1,0 +1,3 @@
+# MailForge-CLI
+
+> 📧 Coming soon...

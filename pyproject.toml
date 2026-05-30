@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "mailforge-cli"
+version = "1.0.0"
+description = "轻量级终端邮件营销智能引擎"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "MailForge Team"},
+]
+keywords = ["email", "smtp", "imap", "marketing", "cli", "mail"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Email",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+tui = [
+    "rich>=13.0",
+    "textual>=3.0",
+]
+
+[project.scripts]
+mailforge = "mailforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mailforge*"]
+
+[tool.setuptools.package-data]
+mailforge = ["templates/*.html"]
